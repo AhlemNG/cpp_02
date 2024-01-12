@@ -6,7 +6,7 @@
 /*   By: anouri <anouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:35:00 by anouri            #+#    #+#             */
-/*   Updated: 2024/01/10 14:30:55 by anouri           ###   ########.fr       */
+/*   Updated: 2024/01/12 18:17:06 by anouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Fixed
     private:
         /* data */
         int _value;
-        static int _nbbits;
+        static const int _nbbits = 8;
     public:
         Fixed(/* args */); // 1 deFault cosntructor
         Fixed(Fixed const & src); // 2 copy constructor cosntructor
