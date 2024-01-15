@@ -6,7 +6,7 @@
 #    By: anouri <anouri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 10:41:32 by anouri            #+#    #+#              #
-#    Updated: 2024/01/10 17:22:49 by anouri           ###   ########.fr        #
+#    Updated: 2024/01/15 15:57:16 by anouri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 # $@ = nom de la cble
 # $< = nom de la premiere dependance
 
-NAME= fixed
+NAME= fixed_02
 
 SRCFILE = ./srcs
 INCFILE = -I./includes

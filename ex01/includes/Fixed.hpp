@@ -6,7 +6,7 @@
 /*   By: anouri <anouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:35:00 by anouri            #+#    #+#             */
-/*   Updated: 2024/01/12 18:17:06 by anouri           ###   ########.fr       */
+/*   Updated: 2024/01/15 15:41:51 by anouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,31 @@
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
-    
+
+#include <iostream>
+#include <cmath>
+
 class Fixed
 {
     private:
-        /* data */
         int _value;
         static const int _nbbits = 8;
     public:
-        Fixed(/* args */); // 1 deFault cosntructor
+        Fixed(); // 1 deFault cosntructor
         Fixed(Fixed const & src); // 2 copy constructor cosntructor
-        /*takes */
         Fixed & operator=(Fixed const & rhs); // 3 copy asssgniment operator
         ~Fixed(); // 4 destrutor
+
         int getRawBits(void) const;
         void setRawBits( int const raw );
+        
+        Fixed(int const value); // integer constructor
+        Fixed(float const value); // float constructor
+
+        float toFloat(void) const;
+        int toInt(void) const;
     };
+
+    std::ostream &operator<<(std::ostream& o, Fixed const& rhs);
 
 #endif
