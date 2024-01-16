@@ -6,7 +6,7 @@
 /*   By: anouri <anouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:10:32 by anouri            #+#    #+#             */
-/*   Updated: 2024/01/15 17:45:17 by anouri           ###   ########.fr       */
+/*   Updated: 2024/01/16 10:27:45 by anouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int main(void)
     Point const c(7, 5);
     Point const d(8, 11);
     
-    std::cout << bsp(a, b, c, d) << std::endl;
+    std::cout << std::boolalpha << bsp(a, b, c, d) <<std::endl;
     return 0;
 }
