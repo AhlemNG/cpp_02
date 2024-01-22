@@ -6,11 +6,12 @@
 /*   By: anouri <anouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:12:05 by anouri            #+#    #+#             */
-/*   Updated: 2024/01/15 15:57:00 by anouri           ###   ########.fr       */
+/*   Updated: 2024/01/22 12:58:56 by anouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Fixed.hpp"
+
 
 Fixed::Fixed(): _value(0)/*default constructor*/
 {
@@ -20,15 +21,15 @@ Fixed::Fixed(): _value(0)/*default constructor*/
 Fixed::Fixed(Fixed const & src) /*copy constructor*/
 {
     // std::cout << "copy constructor called" << std::endl; 
-    // *this = src;
+    // this = src;
     _value = src.getRawBits();
 }
 
-Fixed & Fixed::operator=(Fixed const &rhs)/*assignment operator*/
+Fixed & Fixed::operator=(Fixed const &rhs)/*copy assignment operator*/
 {
     // std::cout << "copy assignment operator called" << std::endl; 
-    // if (this == &f)
-    //     return *this; why??
+    if (this == & rhs)
+        return(*this);
     this->_value = rhs.getRawBits(); 
     return (*this);
 }
@@ -46,30 +47,30 @@ int Fixed::getRawBits(void) const
 
 void Fixed::setRawBits(int const raw)
 {
-    // std::cout << "setRawBits member function called" << std::endl;
     this->_value = raw;
-}
-
-Fixed::Fixed(float const value)
-{
-    // std::cout << "float constructor called" << std::endl;
-    this->_value = roundf(value * (1 << _nbbits)); 
 }
 
 Fixed::Fixed(int const value)
 {
     // std::cout << "int constructor called" << std::endl;
-    this->_value = value * ( 1 << _nbbits);
+    this->_value = value << _nbbits;
+    /*equivalent to (value * 2 ^ 8)*/
+}
+
+Fixed::Fixed(float const value)
+{
+    // std::cout << "float constructor called" << std::endl;
+    this->_value = roundf(value * (1 << _nbbits));
 }
 
 float Fixed::toFloat(void) const
 {
-    return ((float) this->_value / (1 << _nbbits));
+      return (float)_value / (1 << _nbbits);
 }
 
 int Fixed::toInt(void) const
 {
-    return  (this->_value >>_nbbits);
+    return (_value >> _nbbits);
 }
 
 std::ostream & operator<<(std::ostream & o, Fixed const &rhs)
@@ -77,6 +78,7 @@ std::ostream & operator<<(std::ostream & o, Fixed const &rhs)
     o << rhs.toFloat();
     return(o);
 }
+
 /*comparaison operators**********************************************/
 bool Fixed::operator>(Fixed const & rhs)
 {

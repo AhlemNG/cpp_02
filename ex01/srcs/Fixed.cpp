@@ -6,7 +6,7 @@
 /*   By: anouri <anouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:12:05 by anouri            #+#    #+#             */
-/*   Updated: 2024/01/15 15:55:49 by anouri           ###   ########.fr       */
+/*   Updated: 2024/01/22 12:58:44 by anouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ Fixed::Fixed(Fixed const & src) /*copy constructor*/
 Fixed & Fixed::operator=(Fixed const &rhs)/*copy assignment operator*/
 {
     std::cout << "copy assignment operator called" << std::endl; 
-    // if (this == & rhs)
-    //     return(*this);
+    if (this == & rhs)
+        return(*this);
     this->_value = rhs.getRawBits(); 
     return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: anouri <anouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:35:00 by anouri            #+#    #+#             */
-/*   Updated: 2024/01/19 13:33:35 by anouri           ###   ########.fr       */
+/*   Updated: 2024/01/22 12:19:19 by anouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,32 +39,3 @@ class Fixed
     };
 
 #endif
-
-/*numeric data types*/
-
-
-
-/*an integer is*/
-/*
-    a whole number
-         2 3 
-        -5 -6
-*/
-
-/*Floating point numbres
-    => any number with a fractional part
-    the difference between a double and a float is precision.
-
-        1- a double is 
-            (more statndard and accepted datatype than float)
-            double has double precision...
-        2- a float is
-
-            
-    */
-
-
-
-
-/* a fixed point number is*/
-

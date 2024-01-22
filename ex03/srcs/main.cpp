@@ -6,21 +6,24 @@
 /*   By: anouri <anouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:10:32 by anouri            #+#    #+#             */
-/*   Updated: 2024/01/19 15:04:28 by anouri           ###   ########.fr       */
+/*   Updated: 2024/01/22 12:17:38 by anouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Point.hpp"
 #include <iostream>
 
-int main(void)
-{
-    Point const a(10, 10);
-    Point const b(3, 15);
-    Point const c(2, 6);
-    // Point const d(8, 11);
-    Point const d(5,10);
-    
-    std::cout << std::boolalpha << bsp(a, b, c, d) <<std::endl;
+
+int main() {
+    Point a(0.0F, 0.0F);
+    Point b(1.0F, 0.0F);
+    Point c(0.5F, 1.0F);
+
+    Point insidePoint(0.3F, 0.3F);
+    Point outsidePoint(-0.61F, 1.58F);
+
+    std::cout << "Is inside point inside the triangle? " << std::boolalpha << bsp(a, b, c, insidePoint) << std::endl;
+    std::cout << "Is outside point inside the triangle? " << std::boolalpha << bsp(a, b, c, outsidePoint) << std::endl;
+
     return 0;
 }
